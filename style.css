@@ -1,0 +1,251 @@
+/* Duolingo Inspired Design System */
+
+:root {
+    --bg-color: #f7f7f7;
+    --card-bg: #ffffff;
+    --text-main: #3c3c3c;
+    --text-muted: #777777;
+
+    --color-green: #58cc02;
+    --color-green-dark: #46a302;
+    --color-blue: #1cb0f6;
+    --color-blue-dark: #1899d6;
+    --color-orange: #ff9600;
+    --color-orange-dark: #e08500;
+
+    --border-color: #e5e5e5;
+    --font-family: 'Nunito', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-family);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 440px;
+}
+
+/* Mascot & Speech Bubble Section */
+.mascot-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.speech-bubble {
+    position: relative;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-bottom: 4px solid var(--border-color);
+    border-radius: 20px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+}
+
+/* Speech bubble arrow */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid var(--border-color);
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--card-bg);
+    z-index: 1;
+}
+
+/* Speech bubble custom states */
+.speech-bubble.success {
+    border-color: var(--color-green);
+    border-bottom-color: var(--color-green-dark);
+    color: var(--color-green-dark);
+}
+
+.speech-bubble.success::after {
+    border-top-color: var(--color-green);
+}
+
+.speech-bubble.warning {
+    border-color: var(--color-orange);
+    border-bottom-color: var(--color-orange-dark);
+    color: var(--color-orange-dark);
+}
+
+.speech-bubble.warning::after {
+    border-top-color: var(--color-orange);
+}
+
+.mascot-container {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+#mascot-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+    transform-origin: bottom center;
+}
+
+/* Card Section */
+.card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-bottom: 6px solid var(--border-color);
+    border-radius: 24px;
+    padding: 32px 24px;
+    width: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.card-subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* Inputs Group */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.input-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper input {
+    width: 100%;
+    background-color: #fafafa;
+    border: 2px solid var(--border-color);
+    border-bottom: 4px solid var(--border-color);
+    border-radius: 16px;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: var(--font-family);
+    color: var(--text-main);
+    outline: none;
+    transition: all 0.15s ease;
+}
+
+.input-wrapper input::placeholder {
+    color: #afafaf;
+    font-weight: 600;
+}
+
+/* Input states */
+.input-wrapper input:focus {
+    background-color: var(--card-bg);
+    border-color: var(--color-blue);
+    border-bottom-color: var(--color-blue-dark);
+}
+
+/* Primary clicky button */
+.btn-primary {
+    width: 100%;
+    background-color: var(--color-green);
+    color: #ffffff;
+    border: none;
+    border-bottom: 5px solid var(--color-green-dark);
+    border-radius: 16px;
+    font-family: var(--font-family);
+    font-size: 17px;
+    font-weight: 900;
+    padding: 14px 20px;
+    cursor: pointer;
+    letter-spacing: 0.8px;
+    transition: all 0.1s ease;
+    outline: none;
+    user-select: none;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.05);
+}
+
+/* Push down effect on click */
+.btn-primary:active {
+    transform: translateY(4px);
+    border-bottom-width: 1px;
+    margin-bottom: 4px;
+}
+
+/* Result text styling */
+#wynik,
+#warning {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-blue-dark);
+    margin-top: 8px;
+    min-height: 27px;
+    transition: all 0.2s ease;
+}
+
+#warning {
+    color: red;
+}

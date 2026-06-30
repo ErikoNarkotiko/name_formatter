@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreator Pięknych Imion</title>
+    <!-- Google Fonts Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Javascript logic -->
+    <script src="plik.js" defer></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Mascot Section -->
+        <div class="mascot-section">
+            <div id="speech-bubble" class="speech-bubble">
+                <span id="speech-text">Cześć! Wpisz swoje dane, a ładnie je sformatuję! 🦉</span>
+            </div>
+            <div id="mascot-container" class="mascot-container">
+                <img id="mascot-img" src="mascot.png" alt="Mascot Owl">
+            </div>
+        </div>
+
+        <!-- Form Card Section -->
+        <main class="card">
+            <h1 class="card-title">Formatowanie</h1>
+            <p class="card-subtitle">Wpisz swoje imię i nazwisko poniżej:</p>
+
+            <div class="input-group">
+                <label class="input-wrapper">
+                    <input id="input_imie" type="text" placeholder="podaj imię..." autocomplete="off">
+                    <span class="input-highlight"></span>
+                </label>
+                <label class="input-wrapper">
+                    <input id="input_nazwisko" type="text" placeholder="podaj nazwisko..." autocomplete="off">
+                    <span class="input-highlight"></span>
+                </label>
+            </div>
+            <p id="warning"> </p>
+            <button id="btn-format" class="btn-primary" onclick="formatowanie()">FORMATUJ</button>
+            <p id="wynik"></p>
+        </main>
+
+
+    </div>
+</body>
+
+</html>
